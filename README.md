@@ -12,3 +12,5 @@ Use the virtual environment included inside the repository
 Install prerequisites using pip
 1. ```pip install fbchat```
 2. ```python fb.py```
+
+#### Please use at your own discretion. Spamming multiple people within a short period of time WILL get your Facebook account flagged. 
