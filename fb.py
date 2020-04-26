@@ -13,6 +13,7 @@ def main():
         for word in line:
             try:
                 client.send(Message(text=word), thread_id=friend_id, thread_type=ThreadType.USER)
+                print(f'Sending the word {word}')
                 time.sleep(float(input('Delay between each message: ')))
             except:
                 print("Sorry, we've reached Facebook's spam limit.")
