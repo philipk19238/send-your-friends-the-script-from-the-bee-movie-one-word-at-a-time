@@ -7,6 +7,7 @@ def main():
     client = fbchat.Client(input('Username: '), getpass.getpass())
     friends = client.searchForUsers(input('Who do you want to spam? '))
     friend_id = friends[0].uid
+    delay = float(input('Delay between each message: '))
     script = open('no_line_script.txt')
     for i in range(count_lines()):
         line = script.readline().rstrip('\n').split(" ")
@@ -14,7 +15,7 @@ def main():
             try:
                 client.send(Message(text=word), thread_id=friend_id, thread_type=ThreadType.USER)
                 print(f'Sending the word {word}')
-                time.sleep(float(input('Delay between each message: ')))
+                time.sleep(delay)
             except:
                 print("Sorry, we've reached Facebook's spam limit.")
 
