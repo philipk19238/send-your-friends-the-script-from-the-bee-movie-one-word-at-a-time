@@ -1,7 +1,7 @@
 # About the Project
 This project uses the fbchat library to send lines from the Bee movie to your friends on Facebook.
 
-## Installation Instructions
+# Installation Instructions
 
 ### Method 1:
 Use the virtual environment included inside the repository 
