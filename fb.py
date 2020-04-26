@@ -18,6 +18,7 @@ def main():
                 time.sleep(delay)
             except:
                 print("Sorry, we've reached Facebook's spam limit.")
+                break
 
     script.close()
     client.logout()
