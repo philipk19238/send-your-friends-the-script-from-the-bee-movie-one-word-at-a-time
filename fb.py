@@ -20,6 +20,7 @@ def main():
         thread_type = ThreadType.GROUP
     delay = float(input('Delay between each message: '))
     script = open('no_line_script.txt')
+    delay = float(input('Delay between each message: '))
     for i in range(count_lines()):
         line = script.readline().rstrip('\n').split(" ")
         for word in line:
@@ -29,6 +30,11 @@ def main():
                 time.sleep(delay)
             except:
                 print("Sorry, we've reached Facebook's spam limit.")
+<<<<<<< HEAD
+=======
+                break
+
+>>>>>>> 63553ec502a64bddb9d609cf29bed3fa9e2450fd
     script.close()
     client.logout()
 

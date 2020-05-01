@@ -1,17 +1,16 @@
-# <h1 align="center">send your friends the script from the bee movie one word at a time</h1>
+# About the Project
+This project uses the fbchat library to send lines from the Bee movie to your friends on Facebook.
 
-# Instructions
+# Installation Instructions
 
 ### Method 1:
-```
-source env/bin/activate
-python fb.py
-```
-or
-### Method 2:
-```
-pip install fbchat
-python fb.py
-```
+Use the virtual environment included inside the repository 
+1. ```source env/bin/activate```
+2. ```python fb.py```
 
-# Please use at your own discretion. Don't get yourself banned from Facebook! 
+### Method 2:
+Install prerequisites using pip
+1. ```pip install fbchat```
+2. ```python fb.py```
+
+#### Please use at your own discretion. Spamming multiple people within a short period of time WILL get your Facebook account flagged. 
