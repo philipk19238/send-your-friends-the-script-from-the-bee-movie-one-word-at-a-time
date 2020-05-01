@@ -5,20 +5,30 @@ import time
 
 def main():
     client = fbchat.Client(input('Username: '), getpass.getpass())
-    friends = client.searchForUsers(input('Who do you want to spam? '))
-    friend_id = friends[0].uid
+    user_choice = input('Do you want to spam a user or a groupchat? ').lower()
+
+    while user_choice not in ['user', 'groupchat']:
+        user_choice = input('Please enter valid answer (user/groupchat)').lower()
+
+    if user_choice == 'user':
+        friends = client.searchForUsers(input('Who do you want to spam? '))
+        thread_id = friends[0].uid
+        thread_type = ThreadType.USER
+    else:
+        groups = client.searchForGroups(input('Which group do you want to spam? '))
+        thread_id = groups[0].uid
+        thread_type = ThreadType.GROUP
     delay = float(input('Delay between each message: '))
     script = open('no_line_script.txt')
     for i in range(count_lines()):
         line = script.readline().rstrip('\n').split(" ")
         for word in line:
             try:
-                client.send(Message(text=word), thread_id=friend_id, thread_type=ThreadType.USER)
+                client.send(Message(text=word), thread_id=thread_id, thread_type=thread_type)
                 print(f'Sending the word {word}')
                 time.sleep(delay)
             except:
                 print("Sorry, we've reached Facebook's spam limit.")
-
     script.close()
     client.logout()
 
